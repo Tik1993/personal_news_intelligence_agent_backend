@@ -29,7 +29,7 @@ mongoose.connection.on("error", (err) => {
 });
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Welcome to my news agent api");
