@@ -28,8 +28,11 @@ mongoose.connection.on("error", (err) => {
   console.log(err);
 });
 
+app.use(express.json());
 app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Welcome to my news agent api");
 });
+
+app.use("/subscribers", require("./routes/subscriberRoutes"));
